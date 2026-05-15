@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamBlock – Facility Camera Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>CamBlock Home</title>
+  </head>
+  <body>
+    <!-- ── NAV ──────────────────────────────────────── -->
+    <nav>
+      <a class="nav-logo" href="/">
+        <div class="shield"><img src="logo.png" /></div>
+        CamBlock
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="nav-cta">Get App</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">Android Security App</div>
+            <h1 class="hero-title">
+              Facility-Grade<br />
+              <span>Camera Control</span><br />
+              for Android
+            </h1>
+            <p class="hero-desc">
+              Enterprise-level camera access management through QR code scanning
+              and Android Device Administration — built for secure facilities,
+              corporate environments, and controlled zones.
+            </p>
+            <div class="hero-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="btn-primary">
+                ↓ &nbsp;Download on Play Store
+              </a>
+              <a href="#how-it-works" class="btn-secondary">
+                ▶ &nbsp;See How It Works
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone-wrap">
+              <div class="phone-float-badge left">📵 Camera Locked</div>
+              <div class="phone-float-badge right">✅ Enrolled</div>
+              <div class="phone-outer">
+                <div class="phone-screen">
+                  <div class="phone-notch"></div>
+                  <div class="phone-status-bar">9:41 AM</div>
+                  <div class="phone-lock-icon">🔒</div>
+                  <div class="phone-status-text">CAMERA LOCKED</div>
+                  <div class="phone-sub-text">Main Entrance · Facility A</div>
+                  <div class="phone-scan-btn">Scan Exit QR</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ─────────────────────────────────── -->
+    <section id="features">
+      <div class="container">
+        <div class="section-label">Core Features</div>
+        <h2 class="section-title">
+          Everything you need for<br />facility-level control
+        </h2>
+        <p class="section-sub">
+          A complete, multi-layered security system that manages camera access
+          based on physical location through QR code entry and exit scanning.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📷</div>
+            <h3>QR-Based Entry Control</h3>
+            <p>
+              Scan facility entry QR codes to automatically enroll the device
+              and activate camera lockdown. Works entirely offline once
+              validated.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔓</div>
+            <h3>Smart Exit Unlock</h3>
+            <p>
+              Scan exit QR codes to instantly restore full camera access and
+              cleanly remove device enrollment from the system.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡</div>
+            <h3>Hardware-Level Lock</h3>
+            <p>
+              Uses the Android Device Administration API to disable the camera
+              at the hardware level — not just the app, but the entire hardware
+              stack.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">👁</div>
+            <h3>Real-Time Monitoring</h3>
+            <p>
+              A persistent foreground service monitors foreground apps in real
+              time and blocks any camera application the moment it launches.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Overlay Protection</h3>
+            <p>
+              Full-screen warning overlays instantly block any attempt to open a
+              camera app, with clear messaging for the user.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Boot Persistence</h3>
+            <p>
+              Locks are maintained across reboots. The service auto-starts on
+              device boot and restores the previous enrollment state.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3>Backend Validation</h3>
+            <p>
+              Every QR scan is validated in real time against a secure REST API
+              using JWT token authentication with expiration checks.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔋</div>
+            <h3>Battery Optimized</h3>
+            <p>
+              Requests battery optimization exemption to ensure the security
+              service always runs, even on aggressive battery management
+              systems.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📲</div>
+            <h3>MIUI / Android 14+</h3>
+            <p>
+              Special compatibility handling for Xiaomi MIUI devices and Android
+              14+ enhanced permission requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ──────────────────────────────── -->
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-label">Usage Flow</div>
+        <h2 class="section-title">
+          Simple QR workflow,<br />enterprise-grade results
+        </h2>
+        <p class="section-sub">
+          The entire entry-to-exit lifecycle is handled automatically through QR
+          scanning. No complex setup needed by end users.
+        </p>
+
+        <div class="steps-grid">
+          <ul class="steps-list">
+            <li>
+              <div class="step-icon-wrap blue">🔑</div>
+              <div>
+                <h4>1. Grant Permissions</h4>
+                <p>
+                  The app guides users step by step through granting camera,
+                  overlay, usage stats, and device admin permissions — with
+                  helpful prompts at each stage.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="step-icon-wrap cyan">📋</div>
+              <div>
+                <h4>2. Scan Entry QR Code</h4>
+                <p>
+                  On entering a secure facility, the user scans the entry QR
+                  code posted at the gate. The app validates it against the
+                  backend and enrolls the device.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="step-icon-wrap red">🔒</div>
+              <div>
+                <h4>3. Camera Locked</h4>
+                <p>
+                  Device admin policy disables the camera hardware. A foreground
+                  service activates with real-time monitoring and overlay
+                  blocking for any camera app.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="step-icon-wrap green">✅</div>
+              <div>
+                <h4>4. Scan Exit QR Code</h4>
+                <p>
+                  On exit, scan the exit QR code to validate departure, remove
+                  device enrollment, and restore full camera access
+                  automatically.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="steps-visual">
+            <div class="flow-step">
+              <div class="step-num">01</div>
+              <div class="step-info">
+                <h4>QR Scan → API Validation</h4>
+                <p>JWT token extracted and validated with expiration check</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">02</div>
+              <div class="step-info">
+                <h4>Enrollment Registered</h4>
+                <p>
+                  Device ID stored persistently with facility and location data
+                </p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">03</div>
+              <div class="step-info">
+                <h4>Device Admin Activated</h4>
+                <p>
+                  <code
+                    style="
+                      font-family: var(--font-mono);
+                      font-size: 0.78rem;
+                      color: var(--accent);
+                    "
+                    >disable-camera</code
+                  >
+                  policy applied at system level
+                </p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">04</div>
+              <div class="step-info">
+                <h4>Foreground Service Running</h4>
+                <p>
+                  Usage stats monitoring + overlay ready to block camera apps
+                </p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">05</div>
+              <div class="step-info">
+                <h4>Exit → Full Cleanup</h4>
+                <p>Admin removed, service stopped, camera fully restored</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECURITY ──────────────────────────────────── -->
+    <section id="security">
+      <div class="container">
+        <div class="layers-container">
+          <div>
+            <div class="section-label">Security Architecture</div>
+            <h2 class="section-title">
+              Four layers of<br />camera enforcement
+            </h2>
+            <div class="security-text">
+              <p>
+                No single mechanism is relied on. CamBlock stacks four
+                independent layers of camera blocking to ensure no gap exists —
+                even across different Android OEMs and firmware versions.
+              </p>
+              <p>
+                Hardware disable, software monitoring, visual overlay blocking,
+                and usage statistics tracking all work in concert to enforce the
+                policy.
+              </p>
+              <div class="compat-tags">
+                <span class="tag">Samsung</span>
+                <span class="tag">Google Pixel</span>
+                <span class="tag">Xiaomi MIUI</span>
+                <span class="tag">Motorola</span>
+                <span class="tag">OnePlus</span>
+                <span class="tag">Huawei</span>
+                <span class="tag">Android 7+</span>
+                <span class="tag">Android 14+</span>
+              </div>
+            </div>
+          </div>
+          <div class="layer-stack">
+            <div class="layer-item">
+              <div class="layer-num">L1</div>
+              <div class="layer-info">
+                <strong>Device Admin Layer</strong>
+                <span
+                  >System-level camera hardware disable via
+                  DevicePolicyManager</span
+                >
+              </div>
+              <div class="layer-badge">Deepest</div>
+            </div>
+            <div class="layer-item">
+              <div class="layer-num">L2</div>
+              <div class="layer-info">
+                <strong>Foreground Service Layer</strong>
+                <span
+                  >Persistent real-time monitoring with wake lock
+                  protection</span
+                >
+              </div>
+              <div class="layer-badge">Active</div>
+            </div>
+            <div class="layer-item">
+              <div class="layer-num">L3</div>
+              <div class="layer-info">
+                <strong>Overlay Blocking Layer</strong>
+                <span
+                  >Full-screen system overlay intercepts camera app
+                  launches</span
+                >
+              </div>
+              <div class="layer-badge">Visual</div>
+            </div>
+            <div class="layer-item">
+              <div class="layer-num">L4</div>
+              <div class="layer-info">
+                <strong>Usage Statistics Layer</strong>
+                <span>App foreground detection via UsageStatsManager API</span>
+              </div>
+              <div class="layer-badge">Detection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PERMISSIONS ───────────────────────────────── -->
+    <section id="permissions">
+      <div class="container">
+        <div class="section-label">Transparency</div>
+        <h2 class="section-title">Permissions & what they're for</h2>
+        <p class="section-sub">
+          CamBlock requests only the permissions necessary for its security
+          functions. Here's exactly why each one is needed.
+        </p>
+
+        <div class="perms-grid">
+          <div class="perm-group">
+            <h3><span class="b">📷</span> Camera & Network</h3>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>CAMERA</strong>
+                <span>Required for QR code scanning at entry/exit gates</span>
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>INTERNET</strong>
+                <span>Backend API communication for QR validation</span>
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>ACCESS_NETWORK_STATE</strong>
+                <span
+                  >Monitors network connectivity before making API calls</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="perm-group">
+            <h3><span class="c">🛡</span> Device Administration</h3>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>BIND_DEVICE_ADMIN</strong>
+                <span
+                  >Core permission to disable camera hardware via policy</span
+                >
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>MANAGE_DEVICE_POLICY_CAMERA</strong>
+                <span>Enhanced camera policy control on Android 14+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="perm-group">
+            <h3><span class="g">⚙️</span> System & Monitoring</h3>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>SYSTEM_ALERT_WINDOW</strong>
+                <span
+                  >Displays blocking overlay when a camera app is detected</span
+                >
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>PACKAGE_USAGE_STATS</strong>
+                <span>Detects which app is in the foreground for blocking</span>
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>FOREGROUND_SERVICE</strong>
+                <span>Keeps the monitoring service running persistently</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="perm-group">
+            <h3><span class="r">🔋</span> Persistence</h3>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>RECEIVE_BOOT_COMPLETED</strong>
+                <span>Auto-restores lock state after device reboot</span>
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>WAKE_LOCK</strong>
+                <span>Prevents the OS from killing the monitoring service</span>
+              </div>
+            </div>
+            <div class="perm-item">
+              <div class="perm-dot"></div>
+              <div class="perm-item-info">
+                <strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong>
+                <span
+                  >Ensures the service survives aggressive power saving</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ───────────────────────────────────────── -->
+    <section id="cta">
+      <div class="container">
+        <div class="cta-inner">
+          <div
+            class="section-label"
+            style="justify-content: center; display: flex"
+          >
+            Get Started
+          </div>
+          <h2>Ready to secure<br />your facility?</h2>
+          <p>
+            Download CamBlock from the Google Play Store and start managing
+            camera access in minutes.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share"
+              target="_blank"
+              class="btn-primary"
+              style="font-size: 1rem; padding: 16px 36px"
+            >
+              ↓ &nbsp;Get on Google Play
+            </a>
+            <a
+              href="#features"
+              class="btn-secondary"
+              style="font-size: 1rem; padding: 16px 36px"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────────── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/">
+            <div class="shield"><img src="logo.png" /></div>
+            CamBlock
+          </a>
+          <p>
+            Facility-grade camera control for Android. Built for enterprise
+            environments that demand real security.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#permissions">Permissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Use</a></li>
+            <li><a href="privacy.html">Data Deletion</a></li>
+            <li><a href="mailto:shivam.soni@mindefy.tech">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CamBlock. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const links = document.getElementById("navLinks");
+        links.classList.toggle("open");
+      }
+
+      // Close menu on link click
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("navLinks").classList.remove("open");
+        });
+      });
+
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document
+        .querySelectorAll(
+          ".feature-card, .steps-list li, .layer-item, .perm-group"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity .5s ease, transform .5s ease";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>
