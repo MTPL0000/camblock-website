@@ -26,6 +26,7 @@
         <li><a href="/#features">Features</a></li>
         <li><a href="/#how-it-works">How It Works</a></li>
         <li><a href="/#security">Security</a></li>
+        <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="nav-cta">Get App</a></li>
       </ul>
@@ -46,8 +47,9 @@
         <div class="privacy-card">
           <h3>1. Introduction</h3>
           <p>
-            CamBlock ("the App") is an Android application developed for
-            enterprise and facility security use cases. This Privacy Policy
+            CamBlock ("the App") is a mobile application developed for
+            enterprise and facility security use cases, available for both 
+            Android and iOS platforms. This Privacy Policy
             describes how we collect, use, store, and protect information when
             you use the App. By installing or using the App, you agree to the
             practices described in this policy.
@@ -71,10 +73,16 @@
             servers to maintain enrollment records.
           </p>
           <p>
-            <strong>Camera App Usage:</strong> The App uses Android's UsageStats
-            API to detect whether a camera application is in the foreground.
-            This data is processed locally on the device only and is never
-            transmitted to our servers.
+            <strong>Camera App Usage (Android):</strong> The Android App uses 
+            the UsageStats API to detect whether a camera application is in 
+            the foreground. This data is processed locally on the device only 
+            and is never transmitted to our servers.
+          </p>
+          <p>
+            <strong>Profile Management (iOS):</strong> On iOS, the App installs 
+             a secure management profile (MDM) to enforce camera restrictions. 
+            This profile is used exclusively to disable camera hardware and 
+            is removed upon successful exit verification.
           </p>
 
           <h3>3. Information We Do NOT Collect</h3>
@@ -127,14 +135,22 @@
             the device.
           </p>
 
-          <h3>6. Device Administration</h3>
+          <h3>6. Device Management & Administration</h3>
           <p>
-            The App requests Device Administrator privileges to disable the
+            <strong>Android:</strong> The App requests Device Administrator privileges to disable the
             device camera hardware at the system level. This capability is
             activated only when a valid entry QR code is scanned and is fully
-            removed when a valid exit QR code is scanned. Users must explicitly
-            grant Device Administrator rights through the Android Settings
-            system prompt — the App cannot self-activate these rights.
+            removed when a valid exit QR code is scanned.
+          </p>
+          <p>
+            <strong>iOS:</strong> The App utilizes Apple's MDM (Mobile Device Management) framework 
+            to install a temporary configuration profile. This profile disables 
+            camera access and hides the camera application. The profile is 
+            removed upon entering a valid exit verification code.
+          </p>
+          <p>
+            Users must explicitly grant these rights or install the profile through system prompts — 
+            the App cannot self-activate these security measures.
           </p>
 
           <h3>7. Permissions Justification</h3>
@@ -179,7 +195,7 @@
           <p>
             <strong>Email:</strong> shivam.soni@mindefy.tech<br />
             <strong>Developer:</strong> Security App<br />
-            <strong>Platform:</strong> Google Play Store
+            <strong>Platforms:</strong> Google Play Store & Apple App Store
           </p>
         </div>
       </div>
@@ -194,7 +210,7 @@
             CamBlock
           </a>
           <p>
-            Facility-grade camera control for Android. Built for enterprise
+            Facility-grade camera control for iOS & Android. Built for enterprise
             environments that demand real security.
           </p>
         </div>
@@ -204,7 +220,7 @@
             <li><a href="/#features">Features</a></li>
             <li><a href="/#how-it-works">How It Works</a></li>
             <li><a href="/#security">Security</a></li>
-            <li><a href="/#permissions">Permissions</a></li>
+            <li><a href="support.html">Support</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -212,8 +228,7 @@
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="privacy.html">Terms of Use</a></li>
-            <li><a href="privacy.html">Data Deletion</a></li>
-            <li><a href="mailto:shivam.soni@mindefy.tech">Contact Us</a></li>
+            <li><a href="support.html">Contact Us</a></li>
           </ul>
         </div>
       </div>

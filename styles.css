@@ -908,8 +908,9 @@ h1.hero-title span {
     color: var(--muted);
 }
 
-/* ── Privacy Policy ───────────────────────────── */
-#privacy {
+/* ── Privacy Policy & Support ─────────────────── */
+#privacy,
+#support {
     background: var(--surface);
 }
 

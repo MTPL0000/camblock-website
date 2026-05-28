@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamBlock – Support & FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>CamBlock Support</title>
+  </head>
+  <body>
+    <!-- ── NAV ──────────────────────────────────────── -->
+    <nav>
+      <a class="nav-logo" href="/">
+        <div class="shield"><img src="logo.png" /></div>
+        CamBlock
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#security">Security</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="nav-cta">Get App</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- ── SUPPORT SECTION ────────────────────────────── -->
+    <section id="support">
+      <div class="container">
+        <h2 class="section-title">Support & FAQ</h2>
+        <p class="section-sub">
+          Need help with CamBlock? Find answers to common questions or reach out to our team.
+        </p>
+
+        <div class="privacy-card">
+          <h3>Frequently Asked Questions</h3>
+          
+          <div style="margin-bottom: 2rem;">
+            <p><strong>How do I block my camera when entering a facility?</strong></p>
+            <p>
+              Simply open the CamBlock app and scan the Entry QR code provided at the facility gate. 
+              On Android, you'll need to grant Device Admin permissions. On iOS, you will be prompted 
+              to install a secure management profile.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <p><strong>Why did my camera app disappear on iPhone?</strong></p>
+            <p>
+              This is a security feature. On iOS, once the management profile is installed, 
+              the camera hardware is disabled and the system hides the Camera app entirely 
+              to ensure it cannot be used. It will reappear automatically once you exit.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <p><strong>How do I unblock my camera on Android?</strong></p>
+            <p>
+              When you are ready to leave the facility, open CamBlock and scan the Exit QR code. 
+              The app will automatically remove the restrictions and restore full camera access.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <p><strong>How do I unblock my camera on iOS?</strong></p>
+            <p>
+              Since the camera is disabled and the app might be hidden, you need to enter the 
+              <b>Verification Code</b> provided at the exit point into the CamBlock app. 
+              This will remove the management profile and restore your camera and app icons.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <p><strong>What if I encounter an error during scanning?</strong></p>
+            <p>
+              Ensure you have an active internet connection for the initial validation. 
+              If the QR code is not recognized, please ask the facility administrator 
+              for a fresh code or assistance.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem; border-top: 1px solid var(--border); pt: 2rem;">
+            <h3>Still Need Help?</h3>
+            <p>
+              Our support team is available to assist you with any technical issues or 
+              deployment questions.
+            </p>
+            <p>
+              <strong>Email Support:</strong> <a href="mailto:shivam.soni@mindefy.tech" style="color: var(--accent); text-decoration: none;">shivam.soni@mindefy.tech</a>
+            </p>
+            <p>
+              <strong>Response Time:</strong> We typically respond within 24-48 business hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────────── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/">
+            <div class="shield"><img src="logo.png" /></div>
+            CamBlock
+          </a>
+          <p>
+            Facility-grade camera control for iOS & Android. Built for enterprise
+            environments that demand real security.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/#how-it-works">How It Works</a></li>
+            <li><a href="/#security">Security</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Use</a></li>
+            <li><a href="support.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CamBlock. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const links = document.getElementById("navLinks");
+        links.classList.toggle("open");
+      }
+
+      // Close menu on link click
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("navLinks").classList.remove("open");
+        });
+      });
+
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document
+        .querySelectorAll(
+          ".feature-card, .steps-list li, .layer-item, .perm-group"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity .5s ease, transform .5s ease";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>

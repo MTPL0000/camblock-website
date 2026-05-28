@@ -26,6 +26,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#security">Security</a></li>
+        <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="nav-cta">Get App</a></li>
       </ul>
@@ -41,23 +42,26 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <div class="hero-badge">Android Security App</div>
+            <div class="hero-badge">Now on iOS & Android</div>
             <h1 class="hero-title">
               Facility-Grade<br />
               <span>Camera Control</span><br />
-              for Android
+              for Mobile
             </h1>
             <p class="hero-desc">
-              Enterprise-level camera access management through QR code scanning
-              and Android Device Administration — built for secure facilities,
+              Enterprise-level camera access management through QR code scanning,
+              Device Administration, and iOS MDM Profiles — built for secure facilities,
               corporate environments, and controlled zones.
             </p>
             <div class="hero-actions">
               <a href="https://play.google.com/store/apps/details?id=com.sierra.camblock&pcampaignid=web_share" target="_blank" class="btn-primary">
-                ↓ &nbsp;Download on Play Store
+                ↓ &nbsp;Play Store
+              </a>
+              <a href="#" class="btn-primary" style="background: linear-gradient(135deg, #333, #000); box-shadow: 0 0 30px rgba(0,0,0,0.35);">
+                ↓ &nbsp;App Store
               </a>
               <a href="#how-it-works" class="btn-secondary">
-                ▶ &nbsp;See How It Works
+                ▶ &nbsp;How It Works
               </a>
             </div>
           </div>
@@ -193,9 +197,9 @@
               <div>
                 <h4>1. Grant Permissions</h4>
                 <p>
-                  The app guides users step by step through granting camera,
-                  overlay, usage stats, and device admin permissions — with
-                  helpful prompts at each stage.
+                  The app guides you through granting necessary permissions.
+                  On iOS, this includes installing a secure management profile
+                  to enforce camera restrictions.
                 </p>
               </div>
             </li>
@@ -204,9 +208,9 @@
               <div>
                 <h4>2. Scan Entry QR Code</h4>
                 <p>
-                  On entering a secure facility, the user scans the entry QR
-                  code posted at the gate. The app validates it against the
-                  backend and enrolls the device.
+                  On entering a secure facility, scan the entry QR code.
+                  The app validates the token and instantly enrolls your device
+                  into the secure zone.
                 </p>
               </div>
             </li>
@@ -215,20 +219,20 @@
               <div>
                 <h4>3. Camera Locked</h4>
                 <p>
-                  Device admin policy disables the camera hardware. A foreground
-                  service activates with real-time monitoring and overlay
-                  blocking for any camera app.
+                  Camera hardware is disabled system-wide. On iOS, the camera app
+                  will be hidden from the home screen for maximum security
+                  during your stay.
                 </p>
               </div>
             </li>
             <li>
               <div class="step-icon-wrap green">✅</div>
               <div>
-                <h4>4. Scan Exit QR Code</h4>
+                <h4>4. Secure Exit</h4>
                 <p>
-                  On exit, scan the exit QR code to validate departure, remove
-                  device enrollment, and restore full camera access
-                  automatically.
+                  <b>Android:</b> Scan the exit QR code to unblock.<br />
+                  <b>iOS:</b> Enter the verification code provided at the exit
+                  to remove the profile and restore camera access.
                 </p>
               </div>
             </li>
@@ -236,52 +240,31 @@
 
           <div class="steps-visual">
             <div class="flow-step">
-              <div class="step-num">01</div>
+              <div class="step-num">iOS</div>
               <div class="step-info">
-                <h4>QR Scan → API Validation</h4>
-                <p>JWT token extracted and validated with expiration check</p>
+                <h4>MDM Profile Security</h4>
+                <p>Uses Apple's MDM framework for hardware-level camera blocking</p>
               </div>
             </div>
             <div class="flow-step">
-              <div class="step-num">02</div>
+              <div class="step-num">AND</div>
               <div class="step-info">
-                <h4>Enrollment Registered</h4>
-                <p>
-                  Device ID stored persistently with facility and location data
-                </p>
+                <h4>Device Admin Policy</h4>
+                <p>System-level enforcement via Android Device Administration</p>
               </div>
             </div>
             <div class="flow-step">
-              <div class="step-num">03</div>
+              <div class="step-num">QR</div>
               <div class="step-info">
-                <h4>Device Admin Activated</h4>
-                <p>
-                  <code
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: 0.78rem;
-                      color: var(--accent);
-                    "
-                    >disable-camera</code
-                  >
-                  policy applied at system level
-                </p>
+                <h4>API Validation</h4>
+                <p>Real-time JWT validation for every entry/exit request</p>
               </div>
             </div>
             <div class="flow-step">
-              <div class="step-num">04</div>
+              <div class="step-num">EXIT</div>
               <div class="step-info">
-                <h4>Foreground Service Running</h4>
-                <p>
-                  Usage stats monitoring + overlay ready to block camera apps
-                </p>
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="step-num">05</div>
-              <div class="step-info">
-                <h4>Exit → Full Cleanup</h4>
-                <p>Admin removed, service stopped, camera fully restored</p>
+                <h4>Dynamic Restoration</h4>
+                <p>Full camera access restored instantly upon verified exit</p>
               </div>
             </div>
           </div>
@@ -300,22 +283,21 @@
             </h2>
             <div class="security-text">
               <p>
-                No single mechanism is relied on. CamBlock stacks four
-                independent layers of camera blocking to ensure no gap exists —
-                even across different Android OEMs and firmware versions.
+                No single mechanism is relied on. CamBlock stacks multiple
+                independent layers of camera enforcement to ensure no gap exists —
+                enforcing policies at the hardware level on both iOS and Android.
               </p>
               <p>
-                Hardware disable, software monitoring, visual overlay blocking,
-                and usage statistics tracking all work in concert to enforce the
-                policy.
+                Using Android Device Administration and iOS MDM Profile Management,
+                we disable camera access across the entire system, ensuring
+                compliance in restricted zones.
               </p>
               <div class="compat-tags">
+                <span class="tag">iPhone & iPad</span>
                 <span class="tag">Samsung</span>
                 <span class="tag">Google Pixel</span>
                 <span class="tag">Xiaomi MIUI</span>
-                <span class="tag">Motorola</span>
-                <span class="tag">OnePlus</span>
-                <span class="tag">Huawei</span>
+                <span class="tag">iOS 14+</span>
                 <span class="tag">Android 7+</span>
                 <span class="tag">Android 14+</span>
               </div>
@@ -407,21 +389,21 @@
           </div>
 
           <div class="perm-group">
-            <h3><span class="c">🛡</span> Device Administration</h3>
+            <h3><span class="c">🛡</span> Device Management</h3>
             <div class="perm-item">
               <div class="perm-dot"></div>
               <div class="perm-item-info">
-                <strong>BIND_DEVICE_ADMIN</strong>
+                <strong>ANDROID DEVICE ADMIN</strong>
                 <span
-                  >Core permission to disable camera hardware via policy</span
+                  >Core permission to disable camera hardware via system policy</span
                 >
               </div>
             </div>
             <div class="perm-item">
               <div class="perm-dot"></div>
               <div class="perm-item-info">
-                <strong>MANAGE_DEVICE_POLICY_CAMERA</strong>
-                <span>Enhanced camera policy control on Android 14+</span>
+                <strong>iOS MDM PROFILE</strong>
+                <span>Installs a secure management profile to restrict camera usage</span>
               </div>
             </div>
           </div>
@@ -495,7 +477,7 @@
           </div>
           <h2>Ready to secure<br />your facility?</h2>
           <p>
-            Download CamBlock from the Google Play Store and start managing
+            Download CamBlock from the App Store or Google Play Store and start managing
             camera access in minutes.
           </p>
           <div
@@ -515,11 +497,11 @@
               ↓ &nbsp;Get on Google Play
             </a>
             <a
-              href="#features"
-              class="btn-secondary"
-              style="font-size: 1rem; padding: 16px 36px"
+              href="#"
+              class="btn-primary"
+              style="font-size: 1rem; padding: 16px 36px; background: linear-gradient(135deg, #333, #000); box-shadow: 0 0 30px rgba(0,0,0,0.35);"
             >
-              Learn More
+              ↓ &nbsp;Get on App Store
             </a>
           </div>
         </div>
@@ -535,7 +517,7 @@
             CamBlock
           </a>
           <p>
-            Facility-grade camera control for Android. Built for enterprise
+            Facility-grade camera control for iOS & Android. Built for enterprise
             environments that demand real security.
           </p>
         </div>
@@ -545,7 +527,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#security">Security</a></li>
-            <li><a href="#permissions">Permissions</a></li>
+            <li><a href="support.html">Support</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -553,8 +535,7 @@
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="privacy.html">Terms of Use</a></li>
-            <li><a href="privacy.html">Data Deletion</a></li>
-            <li><a href="mailto:shivam.soni@mindefy.tech">Contact Us</a></li>
+            <li><a href="support.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
