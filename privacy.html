@@ -48,11 +48,11 @@
           <h3>1. Introduction</h3>
           <p>
             CamBlock ("the App") is a mobile application developed for
-            enterprise and facility security use cases, available for both 
-            Android and iOS platforms. This Privacy Policy
-            describes how we collect, use, store, and protect information when
-            you use the App. By installing or using the App, you agree to the
-            practices described in this policy.
+            enterprise and facility security use cases, available for both
+            Android and iOS platforms. This Privacy Policy describes how we
+            collect, use, store, and protect information when you use the App.
+            By installing or using the App, you agree to the practices described
+            in this policy.
           </p>
 
           <h3>2. Information We Collect</h3>
@@ -65,24 +65,24 @@
           <p>
             <strong>QR Code Data:</strong> When you scan a QR code, the encoded
             JWT token is transmitted to our API for validation. QR tokens
-            contain facility identifiers, location names, and timestamps.
+            contain facility identifiers, facility labels, and timestamps.
           </p>
           <p>
             <strong>Enrollment Status:</strong> Entry/exit events including
-            timestamps, facility IDs, and location labels are logged on our
+            timestamps, facility IDs, and facility labels are logged on our
             servers to maintain enrollment records.
           </p>
           <p>
-            <strong>Camera App Usage (Android):</strong> The Android App uses 
-            the UsageStats API to detect whether a camera application is in 
-            the foreground. This data is processed locally on the device only 
-            and is never transmitted to our servers.
+            <strong>Camera App Usage (Android):</strong> The Android App uses
+            the UsageStats API to detect whether a camera application is in the
+            foreground. This data is processed locally on the device only and is
+            never transmitted to our servers.
           </p>
           <p>
-            <strong>Profile Management (iOS):</strong> On iOS, the App installs 
-             a secure management profile (MDM) to enforce camera restrictions. 
-            This profile is used exclusively to disable camera hardware and 
-            is removed upon successful exit verification.
+            <strong>Secure Session Protection (iOS):</strong> On iOS, the App
+            uses Apple's Screen Time APIs to apply temporary app restrictions
+            during an active secure session. No MDM profile or configuration
+            profile is installed.
           </p>
 
           <h3>3. Information We Do NOT Collect</h3>
@@ -96,7 +96,8 @@
               name, email, phone number, or address.
             </li>
             <li>
-              We do not track GPS location, movement, or geolocation data.
+              We do not request, collect, track, or transmit GPS location,
+              movement, or geolocation data.
             </li>
             <li>
               We do not access your contacts, messages, call logs, or any
@@ -137,20 +138,23 @@
 
           <h3>6. Device Management & Administration</h3>
           <p>
-            <strong>Android:</strong> The App requests Device Administrator privileges to disable the
-            device camera hardware at the system level. This capability is
-            activated only when a valid entry QR code is scanned and is fully
-            removed when a valid exit QR code is scanned.
+            <strong>Android:</strong> The App requests Device Administrator
+            privileges to disable the device camera hardware at the system
+            level. This capability is activated only when a valid entry QR code
+            is scanned and is fully removed when a valid exit QR code is
+            scanned.
           </p>
           <p>
-            <strong>iOS:</strong> The App utilizes Apple's MDM (Mobile Device Management) framework 
-            to install a temporary configuration profile. This profile disables 
-            camera access and hides the camera application. The profile is 
-            removed upon entering a valid exit verification code.
+            <strong>iOS:</strong> The App uses Apple's Screen Time APIs for the
+            secure-session restriction flow. During an active secure session,
+            the App can block access to selected apps as part of the approved
+            visitor workflow. No MDM enrollment or configuration profile
+            installation is used.
           </p>
           <p>
-            Users must explicitly grant these rights or install the profile through system prompts — 
-            the App cannot self-activate these security measures.
+            Users must explicitly approve the required system permissions
+            through Apple's prompts. The App cannot silently self-activate these
+            security measures.
           </p>
 
           <h3>7. Permissions Justification</h3>
@@ -260,12 +264,12 @@
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.1 },
       );
 
       document
         .querySelectorAll(
-          ".feature-card, .steps-list li, .layer-item, .perm-group"
+          ".feature-card, .steps-list li, .layer-item, .perm-group",
         )
         .forEach((el) => {
           el.style.opacity = "0";
